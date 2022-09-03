@@ -1,0 +1,3 @@
+C:/lpnoite/aula04_0309/exemploSaida/cmake-build-debug/CMakeFiles/exemploSaida.dir
+C:/lpnoite/aula04_0309/exemploSaida/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/lpnoite/aula04_0309/exemploSaida/cmake-build-debug/CMakeFiles/rebuild_cache.dir
