@@ -1,0 +1,3 @@
+C:/lpnoite/aula09_2910/exemploSomar/cmake-build-debug/CMakeFiles/exemploSomar.dir
+C:/lpnoite/aula09_2910/exemploSomar/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/lpnoite/aula09_2910/exemploSomar/cmake-build-debug/CMakeFiles/rebuild_cache.dir

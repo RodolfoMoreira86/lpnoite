@@ -1,0 +1,7 @@
+# ninja log v5
+18	181	6863419514020291	CMakeFiles/exemplo1.dir/calculadora.c.obj	d71e28af202d7dbb
+1	191	6863419514161351	CMakeFiles/exemplo1.dir/main.c.obj	6fd925cd85ed2ddf
+191	419	6863419516348836	exemplo1.exe	f4893233bf5085ae
+3	161	6863422597116214	CMakeFiles/exemplo1.dir/main.c.obj	6fd925cd85ed2ddf
+16	166	6863422597156311	CMakeFiles/exemplo1.dir/calculadora.c.obj	d71e28af202d7dbb
+166	351	6863422598998365	exemplo1.exe	f4893233bf5085ae
