@@ -73,3 +73,72 @@ void verificarPatrimonio(p_produto pProduto[], int tamanho){
     imprimir(pProduto, tamanho);
     printf("Total do patrimonio em Reais: %.2lf \n", total);
 }
+void comprar(p_produto pProduto[], int tamanho) {
+    int codProcurado;
+    printf("Digite o codigo do produto comprado: \n");
+    scanf("%d", &codProcurado);
+    for(int i = 0; i<tamanho; i++){
+        if(codProcurado == pProduto[i]->codigo){
+            fflush(stdin);
+            printf("Digite a quantidade comprada: ");
+            int qtd;
+            scanf("%d", &qtd);
+            if(qtd <=0 ){
+                printf("Valor indevido. Informar corretamente\n");
+                system("pause");
+                return;
+            }
+            pProduto[i]->quantidade += qtd;
+            printf("Quantidade lancada no estoque.");
+            system("pause");
+            return; //sai da funcao
+        }
+    }
+    printf("produto nao encontrado");
+    system("pause");
+
+}
+
+void vender(p_produto pProduto[], int tamanho) {
+    int codProcurado;
+    printf("Digite o codigo do produto vendido: \n");
+    scanf("%d", &codProcurado);
+    for(int i = 0; i<tamanho; i++){
+        if(codProcurado == pProduto[i]->codigo){
+            fflush(stdin);
+            printf("Digite a quantidade vendida: ");
+            int qtd;
+            scanf("%d", &qtd);
+            if(qtd > pProduto[i]->quantidade){
+                printf("Quantidade indisponivel \n");
+                system("pause");
+                return;
+            }
+            pProduto[i]->quantidade -= qtd;
+            printf("Quantidade lancada no estoque.");
+            system("pause");
+            return; //sai da funcao
+        }
+    }
+    printf("produto nao encontrado");
+    system("pause");
+
+}
+
+void listarProdutoUnico(p_produto pProduto[], int tamanho){
+    int codProcurado;
+    printf("Digite o codigo do produto desejado: \n");
+    scanf("%d", &codProcurado);
+    for(int i = 0; i<tamanho; i++){
+        if(codProcurado == pProduto[i]->codigo){
+            printf("Codigo: %d \n", pProduto[i]->codigo);
+            printf("Descricao: %s \n", pProduto[i]->descricao);
+            printf("Quantidae: %d \n", pProduto[i]->quantidade);
+            printf("Preco: %.2f \n", pProduto[i]->preco);
+            system("pause");
+            return;
+        }
+    }
+    printf("Produto nao encontrado");
+    system("pause");
+}

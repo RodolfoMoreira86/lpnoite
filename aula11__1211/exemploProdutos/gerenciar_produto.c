@@ -3,6 +3,8 @@
 #include "produto.h"
 #define MAX 1000
 
+void comprar(p_produto pProduto[1000], int p);
+
 int main() {
     p_produto vtrProdutos[MAX];
     int p = 0; //indica posicao (quantidade)
@@ -29,6 +31,15 @@ int main() {
             case 2:
                 atualizar(vtrProdutos, p);
                 break;
+            case 3:
+                comprar(vtrProdutos, p);
+                break;
+            case 4:
+                vender(vtrProdutos, p);
+                break;
+            case 5:
+                listarProdutoUnico(vtrProdutos, p);
+                break;
             case 6:
                 verificarPatrimonio(vtrProdutos, p);
                 break;
@@ -43,3 +54,5 @@ int main() {
 
     return 0;
 }
+
+

@@ -17,3 +17,9 @@ void atualizar(p_produto pProduto[], int tamanho);
 //percorre a lista somando (preco_unitario * qtd)
 void verificarPatrimonio(p_produto pProduto[], int tamanho);
 
+void comprar(p_produto pProduto[], int tamanho);
+
+void vender(p_produto pProduto[], int tamanho);
+
+void listarProdutoUnico(p_produto pProduto[], int tamanho);
+
