@@ -9,7 +9,6 @@ struct Produto{
     double preco;
 };
 
-
 void inicializar(p_produto pProduto[], int tamanho){
     for(int i=0; i<tamanho; i++){
         pProduto[i] = NULL;
@@ -30,6 +29,8 @@ void cadastrar(p_produto pProduto[], int posicao){
     scanf("%lf", &pProduto[posicao]->preco);
 
     pProduto[posicao]->quantidade = 0;
+    printf("Cadastro do produto efetuado com sucesso. \n");
+    system("pause");
 
 }
 
@@ -37,18 +38,14 @@ void imprimir(p_produto pProduto[], int tamanho){
     //passar pelo vetor, listando cada item pelo ponteiro
     for(int i=0; i<tamanho; i++){
         printf("\n");
-        printf("Codigo: %d \n", pProduto[i]->codigo);
-        printf("Descricao: %s \n", pProduto[i]->descricao);
-        printf("Quantidade em Estoque: %d \n", pProduto[i]->quantidade);
-        printf("Preco: %.2lf \n", pProduto[i]->preco);
+        imprimirProduto(pProduto, i);
         printf("-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
     }
+    system("pause");
 }
 
 void atualizar(p_produto pProduto[], int tamanho){
-    int codProcurado;
-    printf("Digite o codigo do produto a ser alterado: \n");
-    scanf("%d", &codProcurado);
+    int codProcurado = procurarProduto();
     for(int i = 0; i<tamanho; i++){
         if(codProcurado == pProduto[i]->codigo){
             fflush(stdin);
@@ -65,6 +62,7 @@ void atualizar(p_produto pProduto[], int tamanho){
     system("pause");
 }
 
+
 void verificarPatrimonio(p_produto pProduto[], int tamanho){
     double total = 0.0;
     for(int i=0; i<tamanho; i++){
@@ -72,11 +70,10 @@ void verificarPatrimonio(p_produto pProduto[], int tamanho){
     }
     imprimir(pProduto, tamanho);
     printf("Total do patrimonio em Reais: %.2lf \n", total);
+    system("pause");
 }
 void comprar(p_produto pProduto[], int tamanho) {
-    int codProcurado;
-    printf("Digite o codigo do produto comprado: \n");
-    scanf("%d", &codProcurado);
+    int codProcurado = procurarProduto();
     for(int i = 0; i<tamanho; i++){
         if(codProcurado == pProduto[i]->codigo){
             fflush(stdin);
@@ -100,9 +97,7 @@ void comprar(p_produto pProduto[], int tamanho) {
 }
 
 void vender(p_produto pProduto[], int tamanho) {
-    int codProcurado;
-    printf("Digite o codigo do produto vendido: \n");
-    scanf("%d", &codProcurado);
+    int codProcurado = procurarProduto();
     for(int i = 0; i<tamanho; i++){
         if(codProcurado == pProduto[i]->codigo){
             fflush(stdin);
@@ -126,19 +121,28 @@ void vender(p_produto pProduto[], int tamanho) {
 }
 
 void listarProdutoUnico(p_produto pProduto[], int tamanho){
-    int codProcurado;
-    printf("Digite o codigo do produto desejado: \n");
-    scanf("%d", &codProcurado);
+    int codProcurado = procurarProduto();
     for(int i = 0; i<tamanho; i++){
         if(codProcurado == pProduto[i]->codigo){
-            printf("Codigo: %d \n", pProduto[i]->codigo);
-            printf("Descricao: %s \n", pProduto[i]->descricao);
-            printf("Quantidae: %d \n", pProduto[i]->quantidade);
-            printf("Preco: %.2f \n", pProduto[i]->preco);
+            imprimirProduto(pProduto, i);
             system("pause");
             return;
         }
     }
     printf("Produto nao encontrado");
     system("pause");
+}
+
+void imprimirProduto(p_produto const *pProduto, int i) {
+    printf("Codigo: %d \n", pProduto[i]->codigo);
+    printf("Descricao: %s \n", pProduto[i]->descricao);
+    printf("Quantidae: %d \n", pProduto[i]->quantidade);
+    printf("Preco: %.2f \n", pProduto[i]->preco);
+}
+
+int procurarProduto() {
+    int codProcurado;
+    printf("Digite o codigo do produto a ser procurado: \n");
+    scanf("%d", &codProcurado);
+    return codProcurado;
 }

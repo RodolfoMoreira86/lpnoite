@@ -12,6 +12,7 @@ int main() {
     //montar o menu
     int opcao;
     do{
+        //system("cls");
         printf("Cadastro de produtos \n");
         printf("1. Cadastrar Produto\n");
         printf("2. Atualizar Produto\n");

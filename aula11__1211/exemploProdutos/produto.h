@@ -17,9 +17,19 @@ void atualizar(p_produto pProduto[], int tamanho);
 //percorre a lista somando (preco_unitario * qtd)
 void verificarPatrimonio(p_produto pProduto[], int tamanho);
 
+//percorre a lista, ao encontrar o produto solicita a qtd
+//comprada ao usuario
 void comprar(p_produto pProduto[], int tamanho);
 
+//percorre a lista, ao encontrar o produto solicita a qtd
+//vendida ao usuario
 void vender(p_produto pProduto[], int tamanho);
 
+//listar um unico produto encontrado a partir da solicitacao
+//do usuario
 void listarProdutoUnico(p_produto pProduto[], int tamanho);
 
+//leitura para o codigo procurado
+int procurarProduto();
+
+void imprimirProduto(p_produto const *pProduto, int i);
